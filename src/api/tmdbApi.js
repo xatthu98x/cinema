@@ -52,10 +52,7 @@ const tmdbApi = {
         const url = category[cate] + '/' + id + '/similar';
         return axiosClient.get(url, {params: {}});
     },
-    // getpeopleList: (type, params) => {
-    //     const url = 'person/' + personType[type];
-    //     return axiosClient.get(url, params);
-    // },
+
 }
 
 export default tmdbApi;

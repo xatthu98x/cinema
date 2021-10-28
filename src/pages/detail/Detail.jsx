@@ -11,6 +11,10 @@ import VideoList from './VideoList';
 import Movie from './Movie';
 
 import MovieList from '../../components/movie-list/MovieList';
+import { Autoplay } from 'swiper';
+import axiosClient from '../../api/axiosClient';
+
+
 
 const Detail = () => {
 
@@ -24,15 +28,18 @@ const Detail = () => {
             setItem(response);
             window.scrollTo(0,0);
         }
-        getDetail();
+        getDetail(  );
     }, [category, id]);
 
     return (
         <>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0" nonce="y1Tt7BiR"></script>
             {
                 item && (
                     <>
                         <div className="banner" style={{backgroundImage: `url(${apiConfig.originalImage(item.backdrop_path || item.poster_path)})`}}></div>
+                        
                         <div className="mb-3 movie-content container">
                             <div className="movie-content__poster">
                                 <div className="movie-content__poster__img" style={{backgroundImage: `url(${apiConfig.originalImage(item.poster_path || item.backdrop_path)})`}}></div>
@@ -59,23 +66,32 @@ const Detail = () => {
                         </div>
                         <div className="container">
                             <div className="section mb-3">
-                                <div>
-                                    <h1>Click play button to play movie</h1>
-                                    <iframe id="iframe" 
+                                
+                                <div className="movie2">
+                                <h1 className="title2">
+                                   Phim {item.title || item.name}  
+                                </h1>
+                                    <iframe className="phim"
                                     src={`https://www.2embed.ru/embed/tmdb/movie?id=${item.id}`} 
-                                    width="100%" height="700px" 
+                                    allowFullScreen="true"
+                                    webkitallowfullscreen="true" 
+                                    mozallowfullscreen="true"
+                                    //width="100%" 
+                                    //height="600px"                                
                                     ></iframe>
-                                </div>
-                                   
-                                <VideoList id={item.id}/>
+                                    
+                                </div>                
+                                <VideoList id={item.id} />
                             </div>
                             <div className="section mb-3">
-                                <div className="section__header mb-2">
-                                    <h2>Similar</h2>
+                            <div className="section__header mb-2">
+                                    <h2>Phim Thể Loại Tương Tự</h2>
                                 </div>
                                 <MovieList category={category} type="similar" id={item.id}/>
                             </div>
+                            
                         </div>
+                        
                     </>
                 )
             }

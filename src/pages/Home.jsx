@@ -10,6 +10,7 @@ import { category, movieType, tvType } from '../api/tmdbApi';
 const Home = () => {
     return (
         <>
+        
             <HeroSlide/>
             <div className="container">
                 <div className="section mb-3">
@@ -51,6 +52,7 @@ const Home = () => {
                     </div>
                     <MovieList category={category.tv} type={tvType.top_rated}/>
                 </div>
+
             </div>
         </>
     );

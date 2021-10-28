@@ -50,6 +50,7 @@ const Moviel = props => {
                 ref={iframeRef}
                 width="100%"
                 title="video"
+                height="700px"
             ></iframe>
         </div>
     )

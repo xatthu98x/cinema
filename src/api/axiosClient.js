@@ -5,6 +5,7 @@ import apiConfig from "./apiConfig";
 
 const axiosClient = axios.create({
     baseURL: apiConfig.baseUrl,
+    language: apiConfig.language,
     headers: {
         'Content-Type': 'application/json'
     },

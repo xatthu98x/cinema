@@ -14,6 +14,7 @@ const VideoList = props => {
         const getVideos = async () => {
             const res = await tmdbApi.getVideos(category, props.id);
             setVideos(res.results.slice(0, 5));
+            
         }
         getVideos();
     }, [category, props.id]);
@@ -45,10 +46,11 @@ const Video = props => {
             <div className="video__title">
                 <h2>{item.name}</h2>
             </div>
-            { <iframe
+            { <iframe 
                 src={`https://www.youtube.com/embed/${item.key}`}
-                 ref={iframeRef}
-                width="100%"
+                ref={iframeRef}
+                allow="fullscreen;"
+                width="100%" 
                 title="video"
             ></iframe> }
         </div>

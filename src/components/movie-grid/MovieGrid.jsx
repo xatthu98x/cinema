@@ -8,6 +8,7 @@ import Button, { OutlineButton } from '../button/Button';
 import Input from '../input/Input'
 
 import tmdbApi, { category, movieType, tvType } from '../../api/tmdbApi';
+import Movie from '../../pages/detail/Movie';
 
 const MovieGrid = props => {
 
@@ -68,6 +69,9 @@ const MovieGrid = props => {
 
     return (
         <>
+            <div className="search">
+                <h2>Tìm kiếm phim</h2>
+            </div>
             <div className="section mb-3">
                 <MovieSearch category={props.category} keyword={keyword}/>
             </div>
@@ -79,7 +83,7 @@ const MovieGrid = props => {
             {
                 page < totalPage ? (
                     <div className="movie-grid__loadmore">
-                        <OutlineButton className="small" onClick={loadMore}>Load more</OutlineButton>
+                        <OutlineButton className="small" onClick={loadMore}>Load More</OutlineButton>
                     </div>
                 ) : null
             }
@@ -119,7 +123,7 @@ const MovieSearch = props => {
         <div className="movie-search">
             <Input
                 type="text"
-                placeholder="Enter keyword"
+                placeholder="Nhập tên phim"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
             />

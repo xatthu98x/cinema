@@ -8,7 +8,7 @@ import logo from '../../assets/Netflix_icon.svg.png';
 
 const headerNav = [
     {
-        display: 'Home',
+        display: 'Home ',
         path: '/'
     },
     {
@@ -47,7 +47,7 @@ const Header = () => {
             <div className="header__wrap container">
                 <div className="logo">
                     <img src={logo} alt="" />
-                    <Link to="/">tMovies</Link>
+                    <Link to="/">Netflix</Link>
                 </div>
                 <ul className="header__nav">
                     {

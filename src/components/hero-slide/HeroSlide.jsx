@@ -11,6 +11,7 @@ import apiConfig from '../../api/apiConfig';
 
 import './hero-slide.scss';
 import { useHistory } from 'react-router';
+import Movie from '../../pages/detail/Movie';
 
 const HeroSlide = () => {
 
@@ -22,6 +23,7 @@ const HeroSlide = () => {
         const getMovies = async () => {
             const params = {page: 1}
             try {
+                
                 const response = await tmdbApi.getMoviesList(movieType.now_playing  , {params});
                 setMovieItems(response.results.slice(0, 10));
                 console.log(response);
@@ -92,10 +94,10 @@ const HeroSlideItem = props => {
                     <div className="overview">{item.overview}</div>
                     <div className="btns">
                         <Button onClick={() => hisrory.push('/movie/' + item.id)}>
-                            Watch now
+                            Xem Phim
                         </Button>
                         <OutlineButton onClick={setModalActive}>
-                            Watch trailer
+                            Trailer Phim
                         </OutlineButton>
                     </div>
                 </div>
