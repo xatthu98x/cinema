@@ -6,6 +6,7 @@ import './header.scss';
 
 import logo from '../../assets/Netflix_icon.svg.png';
 
+
 const headerNav = [
     {
         display: 'Home ',
@@ -43,6 +44,7 @@ const Header = () => {
     }, []);
 
     return (
+        
         <div ref={headerRef} className="header">
             <div className="header__wrap container">
                 <div className="logo">

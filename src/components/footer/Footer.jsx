@@ -9,6 +9,7 @@ import logo from '../../assets/Netflix_icon.svg.png';
 
 const Footer = () => {
     return (
+        
         <div className="footer" style={{backgroundImage: `url(${bg})`}}>
             <div className="footer__content container">
                 <div className="footer__content__logo">
@@ -38,6 +39,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+        
     );
 }
 

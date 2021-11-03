@@ -16,6 +16,7 @@ import axiosClient from '../../api/axiosClient';
 
 
 
+
 const Detail = () => {
 
     const { category, id } = useParams();
@@ -33,8 +34,6 @@ const Detail = () => {
 
     return (
         <>
-        <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0" nonce="y1Tt7BiR"></script>
             {
                 item && (
                     <>
@@ -48,6 +47,7 @@ const Detail = () => {
                                 <h1 className="title">
                                     {item.title || item.name}
                                 </h1>
+                                
                                 <div className="genres">
                                     {
                                         item.genres && item.genres.slice(0, 10).map((genre, i) => (
@@ -56,6 +56,7 @@ const Detail = () => {
                                     }
                                 </div>
                                 <p className="overview">{item.overview}</p>
+                                
                                 <div className="cast">
                                     <div className="section__header">
                                         <h2>Casts</h2>
@@ -80,8 +81,9 @@ const Detail = () => {
                                     //height="600px"                                
                                     ></iframe>
                                     
-                                </div>                
+                                </div>            
                                 <VideoList id={item.id} />
+                                 
                             </div>
                             <div className="section mb-3">
                             <div className="section__header mb-2">
@@ -89,11 +91,11 @@ const Detail = () => {
                                 </div>
                                 <MovieList category={category} type="similar" id={item.id}/>
                             </div>
-                            
                         </div>
-                        
                     </>
+                    
                 )
+                
             }
         </>
     );

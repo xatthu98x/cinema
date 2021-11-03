@@ -24,8 +24,8 @@ const HeroSlide = () => {
             const params = {page: 1}
             try {
                 
-                const response = await tmdbApi.getMoviesList(movieType.now_playing  , {params});
-                setMovieItems(response.results.slice(0, 10));
+                const response = await tmdbApi.getMoviesList(movieType.popular  , {params});
+                setMovieItems(response.results.slice(0, 9));
                 console.log(response);
             } catch {
                 console.log('error');
@@ -94,7 +94,7 @@ const HeroSlideItem = props => {
                     <div className="overview">{item.overview}</div>
                     <div className="btns">
                         <Button onClick={() => hisrory.push('/movie/' + item.id)}>
-                            Xem Phim
+                                Xem Phim
                         </Button>
                         <OutlineButton onClick={setModalActive}>
                             Trailer Phim

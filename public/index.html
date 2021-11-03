@@ -25,11 +25,43 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .dark-mode {
+      background-color: #F0FFFF;
+      color: #A52A2A;  
+    }
+    .btn2 {
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #00BFFF;
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    position: relative;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
+    background-color: #FFF0F5;
+}
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    
+    <a class="button">
+      <button onclick="myFunction()">
+      <span class="btn2"> Dark Mode</span>
+      </button>
+
+    <script>
+    function myFunction() {
+      var element = document.body;
+      element.classList.toggle("dark-mode");
+    }
+    </script>
+    </a>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -40,5 +72,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    
   </body>
 </html>

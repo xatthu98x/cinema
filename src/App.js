@@ -10,14 +10,17 @@ import Footer from './components/footer/Footer';
 
 import Routes from './config/Routes';
 
+
+
 function App() {
     return (
       <BrowserRouter>
           <Route render={props => (
             <>
                 <Header {...props}/>
-                <Routes/>
+                <Routes/>            
                 <Footer/>
+                
             </>
           )}/>
       </BrowserRouter>
