@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 
+
 import './detail.scss';
 import CastList from './CastList';
 import VideoList from './VideoList';
@@ -13,12 +14,13 @@ import Movie from './Movie';
 import MovieList from '../../components/movie-list/MovieList';
 import { Autoplay } from 'swiper';
 import axiosClient from '../../api/axiosClient';
-
-
+import { Link, useLocation } from 'react-router-dom';
 
 
 const Detail = () => {
-
+    const click = () =>{
+        console.log('dsfsdf');
+    }
     const { category, id } = useParams();
 
     const [item, setItem] = useState(null);
@@ -31,9 +33,11 @@ const Detail = () => {
         }
         getDetail(  );
     }, [category, id]);
-
+ 
+   
     return (
         <>
+        
             {
                 item && (
                     <>
@@ -57,6 +61,8 @@ const Detail = () => {
                                 </div>
                                 <p className="overview">{item.overview}</p>
                                 
+
+                                <button className="btn1"><a href ={`https://www.2embed.ru/embed/tmdb/movie?id=${item.id}`}>Xem phim</a></button>
                                 <div className="cast">
                                     <div className="section__header">
                                         <h2>Casts</h2>
@@ -68,7 +74,7 @@ const Detail = () => {
                         <div className="container">
                             <div className="section mb-3">
                                 
-                                <div className="movie2">
+                                {/* <div className="movie2">
                                 <h1 className="title2">
                                    Phim {item.title || item.name}  
                                 </h1>
@@ -81,9 +87,8 @@ const Detail = () => {
                                     //height="600px"                                
                                     ></iframe>
                                     
-                                </div>            
+                                </div>             */}
                                 <VideoList id={item.id} />
-                                 
                             </div>
                             <div className="section mb-3">
                             <div className="section__header mb-2">

@@ -121,7 +121,8 @@
 }
 
 .btns, .btns::after {
-    width: 380px;
+  text-align: center;
+    width: 300px;
     height: 86px;
     font-size: 36px;
     font-family: 'Bebas Neue', cursive;
@@ -129,7 +130,7 @@
     border: 0;
     color: #fff;
     letter-spacing: 3px;
-    line-height: 88px;
+    line-height: 80px;
     box-shadow: 6px 0px 0px #00E6F6;
     outline: transparent;
     position: relative;
