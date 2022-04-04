@@ -16,7 +16,8 @@
     "sass": "^1.43.3",
     "styled-component": "^2.8.0",
     "swiper": "^6.8.4",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "proxy": "react-netflixclonee.herokuapp.com"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,6 +42,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-    "proxy": "react-netflixclonee.herokuapp.com"
+    
   }
 }
